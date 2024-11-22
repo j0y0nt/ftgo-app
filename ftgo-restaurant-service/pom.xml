@@ -20,6 +20,11 @@
             <version>${eventuate.tram.core.version}</version>
         </dependency>
         <dependency>
+            <groupId>io.eventuate.tram.core</groupId>
+            <artifactId>eventuate-tram-spring-jdbc-kafka</artifactId>
+            <version>${eventuate.tram.core.version}</version>
+        </dependency>
+        <dependency>
             <groupId>net.chrisrichardson.ftgo</groupId>
             <artifactId>ftgo-common</artifactId>
             <version>${revision}</version>
@@ -29,5 +34,24 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
             <version>${springboot-version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${springboot-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+            <version>${springboot-version}</version>
+        </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>
