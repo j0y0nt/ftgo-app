@@ -1,0 +1,33 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>net.chrisrichardson.ftgo</groupId>
+        <artifactId>ftgo-application</artifactId>
+        <version>${revision}</version>
+    </parent>
+    <artifactId>ftgo-restaurant-service</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>io.eventuate.tram.core</groupId>
+            <artifactId>eventuate-tram-aggregate-domain-events</artifactId>
+            <version>${eventuate.tram.core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.eventuate.tram.core</groupId>
+            <artifactId>eventuate-tram-spring-events</artifactId>
+            <version>${eventuate.tram.core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.chrisrichardson.ftgo</groupId>
+            <artifactId>ftgo-common</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <version>${springboot-version}</version>
+        </dependency>
+    </dependencies>
+</project>

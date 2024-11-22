@@ -24,6 +24,12 @@
             <artifactId>junit-jupiter-engine</artifactId>
             <version>${junit-jupiter-engine-version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>net.chrisrichardson.ftgo</groupId>
+            <artifactId>common-swagger</artifactId>
+            <version>${revision}</version>
+        </dependency>
         <dependency>
             <groupId>net.chrisrichardson.ftgo</groupId>
             <artifactId>ftgo-order-service-api</artifactId>
@@ -96,6 +102,29 @@
             <version>${grpc.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>io.microservices.tools.canvas</groupId>
+            <artifactId>microservice-canvas-springmvc</artifactId>
+            <version>0.11.0.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.zipkin.brave</groupId>
+            <artifactId>brave</artifactId>
+            <version>6.0.0</version>
+        </dependency>
+    
+        <dependency>
+            <groupId>net.chrisrichardson.ftgo</groupId>
+            <artifactId>ftgo-restaurant-service-api-spec</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        
+        <dependency>
+        	<groupId>net.chrisrichardson.ftgo</groupId>
+        	<artifactId>ftgo-restaurant-service</artifactId>
+        	<version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>

@@ -35,10 +35,13 @@
         <module>ftgo-kitchen-service-api</module>
         <module>ftgo-consumer-service-api-spec</module>
         <module>ftgo-consumer-service-api</module>
+        <module>ftgo-restaurant-service-api-spec</module>
+        <module>ftgo-restaurant-service</module>
         <module>ftgo-order-service-api</module>
         <module>ftgo-order-service</module>
         <module>ftgo-accounting-service-api-spec</module>
         <module>ftgo-accounting-service-api</module>
+        
     </modules>
     <build>
         <plugins>
