@@ -73,7 +73,6 @@ public class CreateOrderSagaState {
 	}
 
 	private TicketDetails makeTicketDetails(OrderDetails orderDetails) {
-		// TODO FIXME
 		return new TicketDetails(makeTicketLineItems(orderDetails.lineItems()));
 	}
 

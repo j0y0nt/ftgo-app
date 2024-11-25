@@ -38,7 +38,6 @@ public class CancelOrderSaga implements SimpleSaga<CancelOrderSagaData>{
 	            .step()
 	            .invokeParticipant(this::confirmOrderCancel)
 	            .build();
-
 	}
 
 	private CommandWithDestination beginCancel(CancelOrderSagaData data) {
