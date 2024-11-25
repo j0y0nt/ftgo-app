@@ -12,19 +12,15 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
-            <version>${springboot-version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
-            <version>${springboot-version}</version>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit-jupiter-engine-version}</version>
         </dependency>
-
         <dependency>
             <groupId>net.chrisrichardson.ftgo</groupId>
             <artifactId>common-swagger</artifactId>
@@ -81,6 +77,16 @@
             <version>${micrometer-registry-prometheus-version}</version>
         </dependency>
         <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-tracing-bridge-brave</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.loki4j</groupId>
+            <artifactId>loki-logback-appender</artifactId>
+            <version>1.6.0-rc1</version>
+        </dependency>
+        <dependency>
             <groupId>net.chrisrichardson.ftgo</groupId>
             <artifactId>ftgo-consumer-service-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
@@ -111,20 +117,28 @@
         <dependency>
             <groupId>io.zipkin.brave</groupId>
             <artifactId>brave</artifactId>
-            <version>6.0.0</version>
         </dependency>
-    
+
         <dependency>
             <groupId>net.chrisrichardson.ftgo</groupId>
             <artifactId>ftgo-restaurant-service-api-spec</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-        
+
         <dependency>
-        	<groupId>net.chrisrichardson.ftgo</groupId>
-        	<artifactId>ftgo-restaurant-service</artifactId>
-        	<version>0.0.1-SNAPSHOT</version>
+            <groupId>net.chrisrichardson.ftgo</groupId>
+            <artifactId>ftgo-restaurant-service</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.thymeleaf/thymeleaf-spring5 -->
+        <!-- Added below deps as executable jar plugin failed. -->
+        <dependency>
+            <groupId>org.thymeleaf</groupId>
+            <artifactId>thymeleaf-spring5</artifactId>
+            <version>3.1.2.RELEASE</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -156,6 +170,48 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>3.3.4</version>
+                <configuration>
+                    <mainClass>
+                        net.chrisrichardson.ftgo.orderservice.main.OrderServiceMain</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>
+                                net.chrisrichardson.ftgo.orderservice.main.OrderServiceMain</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <!-- Import dependency management from Spring Boot -->
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>3.3.5</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>

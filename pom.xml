@@ -43,7 +43,9 @@
         <module>ftgo-accounting-service-api</module>
         
     </modules>
+    
     <build>
+    
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
